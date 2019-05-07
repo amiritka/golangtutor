@@ -5,6 +5,8 @@
 </head>
 <body>
 	{{.Title}}
-	{{.Message}}
+	{{range .Message}}
+		<li>{{ . }}</li>
+	{{ end }}
 </body>
 </html>

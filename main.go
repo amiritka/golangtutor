@@ -10,19 +10,19 @@ import (
 
 type ViewData struct{
     Title string
-    Message string
+    Message []string
 }
 
 func main(){
 
+    data := ViewData{
+        Title : "Champion list!!",
+        Message : []string{"Tom", "Bob", "Nasty",},
+    }
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
-        data := ViewData{
-            Title : "Champ Boris Britva",
-            Message : "Congratulations!!!",
-        }
         tmpl, _ := template.ParseFiles("c:/users/admin/desktop/goworkspace/templates/userdie.html")
         tmpl.Execute(w, data)
-        
+
     })
 
 
